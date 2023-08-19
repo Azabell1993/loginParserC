@@ -12,18 +12,6 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> CREATE TABLE ADMIN (
-    ->     NO INT  NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ->     USER_INFONUM VARCHAR(10) NOT NULL,
-    ->     NAME VARCHAR(10) NOT NULL,
-    ->     USERNAME VARCHAR(10)  NOT NULL,
-    ->     PASSWORD VARCHAR(10)  NOT NULL,
-    ->     CREATE_DATE DATE  NOT NULL
-    -> ) DEFAULT CHARSET=UTF8MB4;
-ERROR 1046 (3D000): No database selected
-mysql> 
-mysql> use test_Db
-ERROR 1044 (42000): Access denied for user 'test_user'@'localhost' to database 'test_Db'
 mysql> use test_db
 Database changed
 mysql> CREATE TABLE ADMIN (
