@@ -19,9 +19,8 @@ Clone the repository to your local machine
 
 bash
 -------------
-git clone https://github.com/Azabell1993/loginParserC.git
-cd ClangLoginParser
-make
+git clone https://github.com/Azabell1993/loginParserC.git  
+cd ClangLoginParser  
 
 Usage
 -------------
@@ -38,6 +37,24 @@ json
 }
 ```  
 
+Makefile  
+------------
+```  
+CC = gcc
+CFLAGS = -I/usr/include/mysql -g
+LDFLAGS = -L/usr/lib/mysql -lmysqlclient
+
+SOURCES = login.c
+EXECUTABLE = loginSecurithLib
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SOURCES)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	rm -f $(EXECUTABLE)
+```  
 
 Run the compiled executable:
 -------------
