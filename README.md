@@ -58,29 +58,33 @@ clean:
 
 Run the compiled executable:
 -------------
-
+```  
 ./loginSecurithLib
+```  
 
 Follow the prompts to enter a username and password for authentication.
 
 Structure
 -------------
-connector.h: Header file containing JSON parsing and database connection functions.
-login.c: Main program file containing the login and MySQL interaction logic.
-connect.json: JSON configuration file for MySQL connection details.
-Makefile: Makefile for compiling the program.
+1. connector.h: Header file containing JSON parsing and database connection functions.  
+2. login.c: Main program file containing the login and MySQL interaction logic.  
+3. connect.json: JSON configuration file for MySQL connection details.  
+4. Makefile: Makefile for compiling the program.  
 
 Notes
 -------------
-The program establishes a connection to the MySQL database using the details provided in connect.json.
-It performs user authentication and executes sample queries using MySQL.
-The connector.h header provides JSON parsing utilities to read the connect.json file.
+The program establishes a connection to the MySQL database using the details provided in connect.json.  
+It performs user authentication and executes sample queries using MySQL.  
+The connector.h header provides JSON parsing utilities to read the connect.json file.  
+
+
 Contributing
-Contributions are welcome! If you find any issues or want to enhance the example, feel free to create a pull request.
+-------------
+Contributions are welcome! If you find any issues or want to enhance the example, feel free to create a pull request.  
 
 License
 -------------
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.  
 
 Build Example
 -------------
