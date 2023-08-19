@@ -1,0 +1,61 @@
+azabell@azabellUbuntu:~/Desktop$ sudo mysql -u test_user -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE ADMIN (
+    ->     NO INT  NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     USER_INFONUM VARCHAR(10) NOT NULL,
+    ->     NAME VARCHAR(10) NOT NULL,
+    ->     USERNAME VARCHAR(10)  NOT NULL,
+    ->     PASSWORD VARCHAR(10)  NOT NULL,
+    ->     CREATE_DATE DATE  NOT NULL
+    -> ) DEFAULT CHARSET=UTF8MB4;
+ERROR 1046 (3D000): No database selected
+mysql> 
+mysql> use test_Db
+ERROR 1044 (42000): Access denied for user 'test_user'@'localhost' to database 'test_Db'
+mysql> use test_db
+Database changed
+mysql> CREATE TABLE ADMIN (
+    ->     NO INT  NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     USER_INFONUM VARCHAR(10) NOT NULL,
+    ->     NAME VARCHAR(10) NOT NULL,
+    ->     USERNAME VARCHAR(10)  NOT NULL,
+    ->     PASSWORD VARCHAR(10)  NOT NULL,
+    ->     CREATE_DATE DATE  NOT NULL
+    -> ) DEFAULT CHARSET=UTF8MB4;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> CREATE TABLE ADMIN_SECURITY (
+    -> NO INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    -> USER_SECURITY_INFO VARCHAR(10) NOT NULL,
+    -> USERNAME VARCHAR(10)  NOT NULL
+    -> ) DEFAULT CHARSET=UTF8MB4;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO ADMIN ( USER_INFONUM, NAME, USERNAME, PASSWORD, CREATE_DATE)
+    -> VALUES ( 'kbiw@#19!@', '박지우', 'azabell', 'azabell!@', NOW());
+Query OK, 1 row affected, 1 warning (0.02 sec)
+
+mysql> INSERT INTO ADMIN_SECURITY (USER_SECURITY_INFO, USERNAME) VALUES ('kbiw@#19!@', 'azabell')
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from ADMIN;
++----+--------------+-----------+----------+-----------+-------------+
+| NO | USER_INFONUM | NAME      | USERNAME | PASSWORD  | CREATE_DATE |
++----+--------------+-----------+----------+-----------+-------------+
+|  1 | kbiw@#19!@   | 박지우    | azabell  | azabell!@ | 2023-08-19  |
++----+--------------+-----------+----------+-----------+-------------+
+1 row in set (0.00 sec)
+
