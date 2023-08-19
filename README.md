@@ -77,6 +77,14 @@ The program establishes a connection to the MySQL database using the details pro
 It performs user authentication and executes sample queries using MySQL.  
 The connector.h header provides JSON parsing utilities to read the connect.json file.  
 
+MAC
+-------------
+```
+#include <mysql/mysql.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+```  
 
 Contributing
 -------------
