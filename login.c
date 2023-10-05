@@ -6,21 +6,6 @@
 #include <string.h>
 #include <malloc.h>
 #include "connector.h"
-// gcc -o loginSecurithLib login.c -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient -g
-/*
-    MEMBER_ID	varchar(30)	NO	PRI
-    MEMBER_PW	varchar(12)	NO
-*/
-
-// Emscrpten (WebfAssembly) build then
-/*
-#ifdef __EMSCRIPTEN__
-  #include <emscripten.h>
-#endif
-#ifdef __cplusplus
-extern "C" {
-#endif
-*/
 
 #define CHOP(x) x[strlen(x) - 1] = '\0'
 extern char *get_tokens(int token_select_num);

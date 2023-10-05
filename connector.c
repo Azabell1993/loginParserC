@@ -127,10 +127,6 @@ char *test(char *c) {
     char d = sizeof(c);
     char *e = c;
 
-    // asm ("mov %[e], %[d]"
-    //         : [d] "=rm" (d)
-    // : [e] "rm" (*e));
-
     return e;
 }
 
